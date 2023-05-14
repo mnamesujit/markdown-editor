@@ -24,7 +24,7 @@
     "lint": "eslint . --ext js,mjs,cjs,ts,mts,cts,vue",
     "typecheck:main": "tsc --noEmit -p packages/main/tsconfig.json",
     "typecheck:preload": "tsc --noEmit -p packages/preload/tsconfig.json",
-    "typecheck:renderer": "vue-tsc --noEmit -p packages/renderer/tsconfig.json",
+    "typecheck:renderer": "tsc --noEmit -p packages/renderer/tsconfig.json",
     "typecheck": "npm run typecheck:main && npm run typecheck:preload && npm run typecheck:renderer",
     "postinstall": "cross-env ELECTRON_RUN_AS_NODE=1 electron scripts/update-electron-vendors.mjs",
     "format": "npx prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,vue,json}\""
@@ -33,14 +33,14 @@
     "@types/node": "18.16.7",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
-    "@typescript-eslint/eslint-plugin": "5.59.5",
+    "@typescript-eslint/eslint-plugin": "^5.59.5",
     "@typescript-eslint/parser": "^5.59.5",
-    "@vitejs/plugin-vue": "4.2.1",
     "@vue/test-utils": "2.3.2",
     "cross-env": "7.0.3",
     "electron": "24.3.0",
     "electron-builder": "23.6.0",
-    "eslint": "8.40.0",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
     "happy-dom": "9.10.9",
     "nano-staged": "0.8.0",
     "playwright": "1.33.0",
@@ -48,8 +48,7 @@
     "typescript": "5.0.4",
     "unplugin-auto-expose": "0.0.4",
     "vite": "4.3.5",
-    "vitest": "0.31.0",
-    "vue-tsc": "1.6.4"
+    "vitest": "0.31.0"
   },
   "dependencies": {
     "electron-updater": "5.3.0",
